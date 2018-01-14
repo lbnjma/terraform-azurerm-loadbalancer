@@ -9,8 +9,13 @@ Usage
 
 ```hcl
 module "mylb" {
-  source   = "Azure/loadbalancer/azurerm"
-  location = "North Central US"
+  source                                  = "Azure/loadbalancer/azurerm"
+  location                                = "North Central US"
+  type                                    = "private"
+  frontend_subnet_id                      = "MySubnetID"
+  frontend_private_ip_address_allocation  = "Static"
+  frontend_private_ip_address             = "MyAddressIP"
+
   "remote_port" {
     ssh = ["Tcp", "22"]
   }
