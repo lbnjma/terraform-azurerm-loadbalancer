@@ -1,7 +1,15 @@
 load balancer terraform module
 ===========
 
-A terraform module to provide load balancers in Azure.
+A terraform module to provide load balancers in Azure with the following
+characteristics:
+
+  - Ability to specify `public` or `private` loadbalancer using: `var.type`
+  - Specify subnet to use for the loadbalancer :`frontend_subnet_id` 
+  - For `private` loadbalancer, you can specify the private ip address using
+    `frontend_private_ip_address`
+  - Specify the type of the private ip address with `frontend_private_ip_address_allocation`, Dynamic or Static , default is `Dynamic`
+
 
 
 Usage
